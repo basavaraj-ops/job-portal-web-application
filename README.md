@@ -64,7 +64,7 @@ FRONTEND/
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone <git remote add origin https://github.com/basavaraj-ops/job-portal-web-application.git>
    cd FRONTEND/backend
    ```
 
