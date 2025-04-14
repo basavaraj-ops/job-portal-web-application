@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="appform-body">
+    <div class="appform-container">
+        <h1>Job Application Form</h1>
+        <form action="{{ url_for('apply', job_id=job_id) }}" method="post" enctype="multipart/form-data">
+            <label>Position Applied For</label>
+            <input type="text" name="position" value="{{ job_title }}" readonly>
+            <h2>Personal Information</h2>
+            <div class="appform-row">
+                <div class="appform-column">
+                    <label>Full Name</label>
+                    <input type="text" name="fullname" required>
+                </div>
+                <div class="appform-column">
+                    <label> Address</label>
+                    <input type="text" name="Address" required>
+                </div>
+            </div>
+            <div class="appform-row">
+                <div class="appform-column">
+                    <label>Phone Number</label>
+                    <input type="text" name="phone" required>
+                </div>
+                <div class="appform-column">
+                    <label>Email Address</label>
+                    <input type="email" name="email" required>
+                </div>
+            </div>
+            <h2>Education</h2>
+            <div class="appform-row">
+                <div class="appform-column">
+                    <label>Degree</label>
+                    <input type="text" name="Degree">
+                </div>
+                <div class="appform-column">
+                    <label>School/Institution</label>
+                    <input type="text" name="degree">
+                </div>
+                <div class="appform-column">
+                    <label>Year Completed</label>
+                    <input type="text" name="year_completed">
+                </div>
+                <div class="appform-column">
+                    <label>Certifications</label>
+                    <input type="text" name="certifications">
+                </div>
+            </div>
+            <h2>Recent Employment History</h2>
+            <div class="appform-row">
+                <div class="appform-column">
+                    <label>Company Name</label>
+                    <input type="text" name="company">
+                </div>
+                <div class="appform-column">
+                    <label>Position Held</label>
+                    <input type="text" name="position_held">
+                </div>
+                <div class="appform-column">
+                    <label>Start Date</label>
+                    <input type="text" name="start date">
+                </div>
+                <div class="appform-column">
+                    <label>End Date</label>
+                    <input type="text" name="end date">
+                </div>
+            </div>
+            <h2>Skills & Qualifications</h2>
+            <textarea name="skills" rows="5" placeholder="List relevant skills, certifications, or qualifications"></textarea>
+            <h2>Reference</h2>
+            <div class="appform-row">
+                <div class="appform-column">
+                    <label>Reference Name</label>
+                    <input type="text" name="ref_name">
+                </div>
+                <div class="appform-column">
+                    <label>Phone Number</label>
+                    <input type="text" name="ref_phone">
+                </div>
+            </div>
+            <h2>Upload Resume</h2>
+            <div class="appform-row">
+                <div class="appform-column">
+                    <label>Resume (PDF or DOCX)</label>
+                    <input type="file" name="resume" accept=".pdf,.docx" required>
+                </div>
+            </div>
+            <h2>Terms and Conditions</h2>
+            <p class="appform-terms">
+                <input type="checkbox" name="terms" required> I certify that the information provided in this application is accurate and complete. I understand that providing false information may result in disqualification from consideration for employment.
+            </p>
+            <button type="submit" class="appform-submit-button">Submit Application</button>
+        </form>
+    </div>
+</body>
+</html>

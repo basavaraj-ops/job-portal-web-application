@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <link rel="stylesheet" href="./static/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    {% for job in jobs %}
+    <div class="width-50">
+        <div class="recent-job-list" style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; background-color: #f9f9f9;">
+            <div class="width-100">
+                <h4 class="job-title">{{ job['title'] }}</h4>
+                <p class="job-company">{{ job['company'] }} <i class="fa fa-star"></i></p>
+            </div>
+            <div class="width-33">📅 {{ job['experience'] }}</div>
+            <div class="width-33">💼 {{ job['salary'] or 'Not disclosed' }}</div>
+            <div class="width-33"><i class="fa fa-building"></i> {{ job['category'] }}</div>
+            <div class="width-33">📍 {{ job['location'] }}</div>
+            <div class="width-100">
+                <p class="job-skill"><b>Skills:</b> {{ job['skills'] }}</p>
+            </div>
+            <div class="width-100">
+                <a href="{{ url_for('apply', job_id=job.id) }}" class="job-apply-button btn btn-primary">Apply Now</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+</html>

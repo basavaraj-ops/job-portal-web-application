@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+    <link rel="stylesheet" href="./static/style.css">
+    <script src="./static/jobfetch.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="width-100 recent-job">
+        <div class="container">
+            
+            <h2 class="recent-job-heading">RECENT JOB</h2>
+            <p class="recent-job-sub-heading">Get the list of all recent jobs</p>
+            <div class="profile-container">
+                <img src="./static/images/login-profile.png" class="login-image">
+                <p class="profile-name">{{ session['first_name'] }} {{ session['last_name'] }}</p>
+                
+            
+            </div>
+
+            <form method="GET" action="/search">
+                <div class="job-search">
+                    <input type="text" name="company" placeholder="Search  company" class="search-box" required>
+                    <button type="submit" class="jobsearch-button">Search</button>
+                </div>
+            </form>
+           
+            
+
+           
+            
+
+        
+        
+            
+
+    </div>
+    {% for job in jobs %}
+    <div class="width-50">
+        <div class="recent-job-list">
+            <div class="width-100">
+                <h4 class="job-title">HTML Designer</h4>
+                <p class="job-company">Dezven Software Solution <i class="fa fa-star"></i> 234 Reviews</p>
+            </div>
+    
+          
+                <div class="width-33"><i class="fa fa-briefcase"></i> 1 to 4 Years</div>
+                <div class="width-33"><i class="fa fa-money-bill"></i> No disclosed</div>
+                <div class="width-33"><i class="fa fa-building"></i> IT Service </div>
+                <div class="width-33"><i class="fa fa-map-pin"></i> Pune</div>
+                <div class="width-33"><i class="fa fa-building"></i> Categories</div>
+            
+    
+            <div class="width-100">
+                <p class="job-skill"><b>Skills :</b> HTML, CSS, JavaScript, jQuery, Bootstrap, Photoshop</p>
+            </div>
+    
+            <div class="width-100">
+                <a href="{{ url_for('apply', job_id=job.id) }}" class="job-apply-button">Apply Now</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% for job in jobs %}
+    <div class="width-50">
+        <div class="recent-job-list">
+            <div class="width-100">
+                <h4 class="job-title">Python Developer</h4>
+                <p class="job-company">PixelFactor Solutions <i class="fa fa-star"></i> 234 Reviews</p>
+            </div>
+            
+            <div class="width-33"><i class="fa fa-briefcase"></i> 0 to 3 Years</div>
+            <div class="width-33"><i class="fa fa-money-bill"></i> No disclosed</div>
+            <div class="width-33"><i class="fa fa-building"></i> IT Service</div>
+            <div class="width-33"><i class="fa fa-map-pin"></i> Banglore</div>
+            <div class="width-33"><i class="fa fa-building"></i> Categories</div>
+            <div class="width-100">
+                <p class="job-skill"><b>Skills :</b> Python, OOPS, SQL, React, Falsk, Django</p>
+            </div>
+            <div class="width-100">
+                <a href="{{ url_for('apply', job_id=job.id) }}" class="job-apply-button">Apply Now</a>
+
+            </div>
+        </div>
+    </div>
+    
+    {% endfor %}
+
+    {% for job in jobs %}
+
+    <div class="width-50">
+        <div class="recent-job-list">
+            <div class="width-100">
+                <h4 class="job-title">Machine Learning Engineer</h4>
+                <p class="job-company">Infosys <i class="fa fa-star"></i> 234 Reviews</p>
+            </div>
+            <div class="width-33"><i class="fa fa-briefcase"></i> 5 to 9 Years</div>
+            <div class="width-33"><i class="fa fa-money-bill"></i> 10 Vacance</div>
+            <div class="width-33"><i class="fa fa-building"></i> Categories</div>
+            <div class="width-33"><i class="fa fa-map-pin"></i> Pune</div>
+            
+            <div class="width-100">
+                <p class="job-skill"><b>Skills :</b> Python, Machine Learning, MLModels, Data Structures , Algorithms, NumPy</p>
+            </div>
+            <div class="width-100">
+                <a href="{{ url_for('apply', job_id=job.id) }}" class="job-apply-button">Apply Now</a>
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% for job in jobs %}
+    <div class="width-50">
+        <div class="recent-job-list">
+            <div class="width-100">
+                <h4 class="job-title">Software Engineer</h4>
+                <p class="job-company">TCS <i class="fa fa-star"></i> 234 Reviews</p>
+            </div>
+            <div class="width-33"><i class="fa fa-briefcase"></i> 0 to 1 Years</div>
+            <div class="width-33"><i class="fa fa-money-bill"></i> No disclosed</div>
+            <div class="width-33"><i class="fa fa-building"></i> Categories</div>
+            <div class="width-33"><i class="fa fa-map-pin"></i> Banglore</div>
+            
+            <div class="width-100">
+                <p class="job-skill"><b>Skills :</b> HTML, CSS, JavaScript, React, Node, MERN</p>
+            </div>
+            <div class="width-100">
+                <a href="{{ url_for('apply', job_id=job.id) }}" class="job-apply-button">Apply Now</a>
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    {% for job in jobs %}
+ 
+    <div class="width-50">
+        <div class="recent-job-list">
+            <div class="width-100">
+                <h4 class="job-title">Cloud Engineer</h4>
+                <p class="job-company">Amazon <i class="fa fa-star"></i> 234 Reviews</p>
+            </div>
+            <div class="width-33"><i class="fa fa-briefcase"></i> 2 to 5 Years</div>
+            <div class="width-33"><i class="fa fa-money-bill"></i> No disclosed</div>
+            <div class="width-33"><i class="fa fa-building"></i> Categories</div>
+            <div class="width-33"><i class="fa fa-map-pin"></i> Pune</div>
+            <div class="width-100">
+                <p class="job-skill"><b>Skills :</b> AWS Cloud, GCP Cloud, Devops, Big Data, Hadoop, Network System</p>
+            </div>
+            <div class="width-100">
+                <a href="{{ url_for('apply', job_id=job.id) }}" class="job-apply-button">Apply Now</a>
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    {% for job in jobs %}
+   
+    <div class="width-50">
+        <div class="recent-job-list">
+            <div class="width-100">
+                <h4 class="job-title">Frontend Engineer</h4>
+                <p class="job-company">HCL <i class="fa fa-star"></i> 150 Reviews</p>
+            </div>
+            <div class="width-33"><i class="fa fa-briefcase"></i> 0 to 1 Years</div>
+            <div class="width-33"><i class="fa fa-money-bill"></i> No disclosed</div>
+            <div class="width-33"><i class="fa fa-building"></i> Categories</div>
+            <div class="width-33"><i class="fa fa-map-pin"></i> Banglore</div>
+            <div class="width-100">
+                <p class="job-skill"><b>Skills :</b> HTML, CSS, JavaScript, React, Bootstrap, Falsk</p>
+            </div>
+            <div class="width-100">
+                <a href="{{ url_for('apply', job_id=job.id) }}" class="job-apply-button">Apply Now</a>
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    {% for job in jobs %}
+    
+    <div class="width-50">
+        <div class="recent-job-list">
+            <div class="width-100">
+                <h4 class="job-title">Data Engineer</h4>
+                <p class="job-company">Microsoft  <i class="fa fa-star"></i> 300 Reviews</p>
+            </div>
+            <div class="width-33"><i class="fa fa-briefcase"></i> 5 to 8 Years</div>
+            <div class="width-33"><i class="fa fa-money-bill"></i> 10 Vacancy</div>
+            <div class="width-33"><i class="fa fa-building"></i> Categories</div>
+            <div class="width-33"><i class="fa fa-map-pin"></i> Banglore</div>
+            <div class="width-100">
+                <p class="job-skill"><b>Skills :</b> AWS Cloud, GCP Cloud, Devops, Big Data, Hadoop, Network System , HDFS, Spark</p>
+            </div>
+            <div class="width-100">
+                <a href="{{ url_for('apply', job_id=job.id) }}" class="job-apply-button">Apply Now</a>
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    {% for job in jobs %}
+   
+    <div class="width-50">
+        <div class="recent-job-list">
+            <div class="width-100">
+                <h4 class="job-title">Data Analayst</h4>
+                <p class="job-company">Amazon <i class="fa fa-star"></i> 234 Reviews</p>
+            </div>
+            <div class="width-33"><i class="fa fa-briefcase"></i> 2 to 5 Years</div>
+            <div class="width-33"><i class="fa fa-money-bill"></i> No disclosed</div>
+            <div class="width-33"><i class="fa fa-building"></i> Categories</div>
+            <div class="width-33"><i class="fa fa-map-pin"></i> Mumbai</div>
+            <div class="width-100">
+                <p class="job-skill"><b>Skills :</b> Python , AWs, PowerBI , Tableu, SSP,SQL</p>
+            </div>
+            <div class="width-100">
+                <a href="{{ url_for('apply', job_id=job.id) }}" class="job-apply-button">Apply Now</a>
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    {% for job in jobs %}
+    
+    <div class="width-50">
+        <div class="recent-job-list">
+            <div class="width-100">
+                <h4 class="job-title">HR Recruiter</h4>
+                <p class="job-company">Amazon <i class="fa fa-star"></i> 234 Reviews</p>
+            </div>
+            <div class="width-33"><i class="fa fa-briefcase"></i> 2 to 5 Years</div>
+            <div class="width-33"><i class="fa fa-money-bill"></i> No disclosed</div>
+            <div class="width-33"><i class="fa fa-building"></i> Categories</div>
+            <div class="width-33"><i class="fa fa-map-pin"></i> Pune</div>
+            <div class="width-100">
+                <p class="job-skill"><b>Skills :</b> Strong Communaction Skills , Proficent in English</p>
+            </div>
+            <div class="width-100">
+                <a href="{{ url_for('apply', job_id=job.id) }}" class="job-apply-button">Apply Now</a>
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    {% for job in jobs %}
+    
+    <div class="width-50">
+        <div class="recent-job-list">
+            <div class="width-100">
+                <h4 class="job-title">Data Science</h4>
+                <p class="job-company">Amazon <i class="fa fa-star"></i> 234 Reviews</p>
+            </div>
+            <div class="width-33"><i class="fa fa-briefcase"></i> 2 to 5 Years</div>
+            <div class="width-33"><i class="fa fa-money-bill"></i> No disclosed</div>
+            <div class="width-33"><i class="fa fa-building"></i> Categories</div>
+            <div class="width-33"><i class="fa fa-map-pin"></i> Delhi</div>
+            <div class="width-100">
+                <p class="job-skill"><b>Skills :</b> Python, Arificial inteligence , Machine Learning</p>
+            </div>
+            <div class="width-100">
+                <a href="{{ url_for('apply', job_id=job.id) }}" class="job-apply-button">Apply Now</a>
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    {% for job in jobs %}
+   
+    <div class="width-50">
+        <div class="recent-job-list">
+            <div class="width-100">
+                <h4 class="job-title">Cloud Engineer</h4>
+                <p class="job-company">Amazon <i class="fa fa-star"></i> 234 Reviews</p>
+            </div>
+            <div class="width-33"><i class="fa fa-briefcase"></i> 2 to 5 Years</div>
+            <div class="width-33"><i class="fa fa-money-bill"></i> No disclosed</div>
+            <div class="width-33"><i class="fa fa-building"></i> Categories</div>
+            <div class="width-33"><i class="fa fa-map-pin"></i> Pune</div>
+            <div class="width-100">
+                <p class="job-skill"><b>Skills :</b> AWS Cloud, GCP Cloud, Devops, Big Data, Hadoop, Network System</p>
+            </div>
+            <div class="width-100">
+                <a href="{{ url_for('apply', job_id=job.id) }}" class="job-apply-button">Apply Now</a>
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    
+    {% for job in jobs %}
+   
+    <div class="width-50">
+        <div class="recent-job-list">
+            <div class="width-100">
+                <h4 class="job-title">Backend Engineer</h4>
+                <p class="job-company">Amazon <i class="fa fa-star"></i> 234 Reviews</p>
+            </div>
+            <div class="width-33"><i class="fa fa-briefcase"></i> 2 to 5 Years</div>
+            <div class="width-33"><i class="fa fa-money-bill"></i> No disclosed</div>
+            <div class="width-33"><i class="fa fa-building"></i> Categories</div>
+            <div class="width-33"><i class="fa fa-map-pin"></i> Pune</div>
+            <div class="width-100">
+                <p class="job-skill"><b>Skills :</b> Nodejs, Reactjs, Angular.js, Flask</p>
+            </div>
+            <div class="width-100">
+                <a href="{{ url_for('apply', job_id=job.id) }}" class="job-apply-button">Apply Now</a>
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    {% for job in jobs %}
+
+    
+    <div class="width-50">
+        <div class="recent-job-list" style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; background-color: #f9f9f9;">
+            <div class="width-100">
+                <h4 class="job-title">{{ job['title'] }}</h4> <!-- Job Title -->
+                <p class="job-company">{{ job['company'] }} <i class="fa fa-star"></i></p> <!-- Company -->
+            </div>
+            <div class="width-33">📅 {{ job['experience'] }}</div> <!-- Experience -->
+            <div class="width-33">💼 {{ job['salary'] or 'Not disclosed' }}</div> <!-- Salary -->
+            <div class="width-33"><i class="fa fa-building"></i> {{ job['Categories'] }}</div> 
+            <div class="width-33">📍 {{ job['location'] }}</div> <!-- Location --> 
+            <div class="width-100">
+                <p class="job-skill"><b>Skills:</b> {{ job['skills'] }}</p> <!-- Skills -->
+            </div>
+            <div class="width-100">
+                <a href="{{ url_for('apply', job_id=job.id) }}" class="job-apply-button btn btn-primary">Apply Now</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    
+
+
+    
+</body>
+</html>
+
+
+
+

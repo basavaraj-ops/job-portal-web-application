@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Dashboard - Manage Listings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="manage-post-jobs">
+    <div class="employer-dashboard-container">
+        <h2 class="employer-dashboard-heading">Recruiter Dashboard</h2>
+
+        <div class="employer-dashboard-actions">
+            <button class="btn btn-primary" onclick="window.location.href='/job-post'">+ Post New Job</button>
+        </div>
+
+        <div class="employer-dashboard-section">
+            <h3>Manage Job Listings</h3>
+            {% if jobs %}
+            <table class="employer-dashboard-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Location</th>
+                        <th>Posted Date</th>
+                        <th>Applications</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for job in jobs %}
+                    <tr>
+                        <td>{{ job.title }}</td>
+                        <td>{{ job.category }}</td>
+                        <td>{{ job.location }}</td>
+                        <td>{{ job.date_posted }}</td>
+                        <td>{{ job.applications|length }}</td>
+                        <td>
+                            <a href="/edit-job/{{ job.id }}" class="btn btn-warning btn-sm">✏️ Edit</a>
+                            <a href="/delete-job/{{ job.id }}" class="btn btn-danger btn-sm">🗑️ Delete</a>
+                            <a href="/view-applicants/{{ job.id }}" class="btn btn-info btn-sm">📈 Applications</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p class="employer-dashboard-empty">No job listings found.</p>
+            {% endif %}
+        </div>
+
+        <div class="employer-dashboard-section">
+            <h3>Company Profile</h3>
+            <p><strong>Name:</strong> {{ employer.name }}</p>
+            <p><strong>Description:</strong> {{ employer.description }}</p>
+            
+            <a href="/edit-profile" class="btn btn-outline-primary">✏️ Edit Profile</a>
+            <a href="/delete-profile" class="btn btn-outline-danger">🗑️ Delete Profile</a>
+        </div>
+
+        <div class="employer-dashboard-section">
+            <h3>Statistics & Analytics</h3>
+            <p><strong>Total Job Views:</strong> {{ stats.total_views }}</p>
+            <p><strong>Total Applications:</strong> {{ stats.total_applications }}</p>
+            <p><strong>Filter By Date:</strong>
+                <input type="date" name="filter_date" id="filter_date">
+                <button class="btn btn-outline-secondary" onclick="filterJobsByDate()">🔍 Filter</button>
+            </p>
+        </div>
+
+        <div class="employer-dashboard-section">
+            <h3>Messages & Notifications</h3>
+            {% if messages %}
+            <ul>
+                {% for msg in messages %}
+                <li><strong>{{ msg.sender }}:</strong> {{ msg.text }} - <em>{{ msg.date }}</em></li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>No new messages or notifications.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        function filterJobsByDate() {
+            const date = document.getElementById('filter_date').value;
+            if (date) {
+                window.location.href = `/manage?filter_date=${date}`;
+            }
+        }
+    </script>
+</body>
+</html>

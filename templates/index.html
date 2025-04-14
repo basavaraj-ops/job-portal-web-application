@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <link rel="stylesheet" href="./static/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<body>
+    <!-- HEADER SECTION STARTS -->
+    <div class="width-100">
+        <div class="container header">
+            <div class="width-25">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+            </div>
+            <div class="width-50">
+                <ul class="header-menu">
+                    <li><a href="#"> Home</a></li>
+                    <li><a href="#"> Jobs</a></li>
+                    <li><a href="#"> Companies</a></li>
+                    <li><a href="#"> Services</a></li>
+                    <li><a href="#"> Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="width-25">
+                
+                <a href="{{ url_for('register') }}" class="button-job-post">Register</a>
+
+            
+               
+                <a href="{{ url_for('login') }}" class="button-resume">Login</a>
+                <a href="{{ url_for('adminlogin') }}" class="button-resume">Admin</a>
+                
+
+                
+            </div>
+        </div>
+    </div>
+    <!-- HEADER SECTION ENDS -->
+    <!-- SEARCH SECTION STARTS -->
+    <div class="width-100 banner-section">
+        <div class="container">
+            <h1 class="banner-heading">Find the Best Job For Your Future</h1>
+            <p class="banner-para">Empowering job seekers and recruiters for a better future</p>
+
+            <form method="GET" action="/search">
+                <div class="search-sect">
+                    <input type="text" class="search-textbox" name="company" placeholder="Search Company">
+                </div>
+                <div class="search-sect">
+                    <input type="text" class="search-textbox" name="location" placeholder="Search Location">
+                </div>
+                <div class="search-sect">
+                    <select class="search-textbox" name="category">
+                        <option value=""> Categories</option>
+                        <option value="IT">IT Service</option>
+                        <option value="Finance">Finance Service</option>
+                        <option value="Marketing">Marketing Service</option>
+                        <option value="Healthcare">Healthcare Service</option>
+                    </select>
+                </div>
+               
+                <div class="search-sect">
+                    <button class="search-button"><i class="fa fa-search"></i>Search Here</button>
+                    
+                </div>
+            </form>
+            
+
+           
+           
+            
+           
+
+
+          
+  
+
+
+           
+
+
+
+            
+
+        </div>
+    </div>
+    
+    <!-- SEARCH SECTION ENDS -->
+    <!-- CATEGORY SECTION STARTS -->
+    <div class="width-100 skill-section">
+        <div class="container">
+            <div class="skill-list">
+                <div class="width-33">
+                    <img src="./static/images/skill-1.png">
+
+
+                </div>
+                <div class="width-66">
+                    <h4>IT Sector</h4>
+                    <button class="view-button">7,600 jobs</button>
+                </div>
+            </div>
+                <div class = "skill-list">
+                    <div class="width-33">
+                        <img class="skill-img" src=".\static\images\skill-2.png">
+                    </div>
+    
+                    <div class="width-66">
+                    <h4>Call Center</h4>
+                    <button class="view-button">5,000 jobs</button>
+                    </div>
+                </div>
+                <div class = "skill-list">
+                    <div class="width-33">
+                        <img class="skill-img" src=".\static\images\skill-3.png">
+                    </div>
+    
+                    <div class="width-66">
+                    <h4>BPO</h4>
+                    <button class="view-button">1,100 jobs</button>
+                    </div>
+                </div>
+                <div class = "skill-list">
+                    <div class="width-33">
+                        <img class="skill-img" src=".\static\images\skill-4.png">
+                    </div>
+    
+                    <div class="width-66">
+                    <h4>sales</h4>
+                    <button class="view-button">2,345 jobs</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CATEGORY SECTION ENDS -->
+    <!-- top company starts -->
+     <div class="width-100 top-company">
+        <div class="container">
+            <h2 class="top-company-heading">Top Company Hiring</h2>
+            <p class="top-company-sub-heading">List of Top Company Hiring Us</p>
+
+
+            <div cass="width-25">
+                <div class="company-list">
+                    <div class="width-100">
+                        <div class="width-25 company-image">
+                            <img src="./static/images/company-1.png">
+                        </div>
+                        <div class="width-75">
+                            <h4 class="company-name">Google Company</h4>
+                            <p class="company-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></p>
+                            <p class="Company-review">(874 Reviews)</p>
+                        </div> 
+                    </div>
+                    <div class="width-50 company-address">New York, USA</div>
+                    <div class="width-50 company-opening">25 Job Opening</div>
+                </div>
+            </div>
+
+            <div cass="width-25">
+                <div class="company-list">
+                    <div class="width-100">
+                        <div class="width-25 company-image">
+                            <img src="./static/images/company-2.png">
+                        </div>
+                        <div class="width-75">
+                            <h4 class="company-name">Microsoft Company</h4>
+                            <p class="company-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></p>
+                            <p class="Company-review">(874 Reviews)</p>
+                        </div> 
+                    </div>
+                    <div class="width-50 company-address">New York, USA</div>
+                    <div class="width-50 company-opening">25 Job Opening</div>
+                </div>
+            </div>
+
+            <div cass="width-25">
+                <div class="company-list">
+                    <div class="width-100">
+                        <div class="width-25 company-image">
+                            <img src="./static/images/company-3.png">
+                        </div>
+                        <div class="width-75">
+                            <h4 class="company-name">IBM company</h4>
+                            <p class="company-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></p>
+                            <p class="Company-review">(874 Reviews)</p>
+                        </div> 
+                    </div>
+                    <div class="width-50 company-address">New York, USA</div>
+                    <div class="width-50 company-opening">40 Job Opening</div>
+                </div>
+            </div>
+
+            <div cass="width-25">
+                <div class="company-list">
+                    <div class="width-100">
+                        <div class="width-25 company-image">
+                            <img src="./static/images/company-4.png">
+                        </div>
+                        <div class="width-75">
+                            <h4 class="company-name">Apple Company</h4>
+                            <p class="company-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></p>
+                            <p class="Company-review">(874 Reviews)</p>
+                        </div> 
+                    </div>
+                    <div class="width-50 company-address">New York, USA</div>
+                    <div class="width-50 company-opening">25 Job Opening</div>
+                </div>
+            </div>
+
+            <div cass="width-25">
+                <div class="company-list">
+                    <div class="width-100">
+                        <div class="width-25 company-image">
+                            <img src="./static/images/company-5.png">
+                        </div>
+                        <div class="width-75">
+                            <h4 class="company-name">Infosys Company</h4>
+                            <p class="company-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></p>
+                            <p class="Company-review">(874 Reviews)</p>
+                        </div> 
+                    </div>
+                    <div class="width-50 company-address">Banglore, India</div>
+                    <div class="width-50 company-opening">250 Job Opening</div>
+                </div>
+            </div>
+
+            <div cass="width-25">
+                <div class="company-list">
+                    <div class="width-100">
+                        <div class="width-25 company-image">
+                            <img src="./static/images/company-6.png">
+                        </div>
+                        <div class="width-75">
+                            <h4 class="company-name">Wipro Company</h4>
+                            <p class="company-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></p>
+                            <p class="Company-review">(874 Reviews)</p>
+                        </div> 
+                    </div>
+                    <div class="width-50 company-address">Hyderbad, India</div>
+                    <div class="width-50 company-opening">25 Job Opening</div>
+                </div>
+            </div>
+
+            <div cass="width-25">
+                <div class="company-list">
+                    <div class="width-100">
+                        <div class="width-25 company-image">
+                            <img src="./static/images/company-7.png">
+                        </div>
+                        <div class="width-75">
+                            <h4 class="company-name">HCL Company</h4>
+                            <p class="company-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></p>
+                            <p class="Company-review">(874 Reviews)</p>
+                        </div> 
+                    </div>
+                    <div class="width-50 company-address">Bejing, CHINA</div>
+                    <div class="width-50 company-opening">25 Job Opening</div>
+                </div>
+            </div>
+
+            <div cass="width-25">
+                <div class="company-list">
+                    <div class="width-100">
+                        <div class="width-25 company-image">
+                            <img src="./static/images/company-8.png">
+                        </div>
+                        <div class="width-75">
+                            <h4 class="company-name">Linkedin Company</h4>
+                            <p class="company-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></p>
+                            <p class="Company-review">(874 Reviews)</p>
+                        </div> 
+                    </div>
+                    <div class="width-50 company-address">New York, USA</div>
+                    <div class="width-50 company-opening">25 Job Opening</div>
+                </div>
+            </div>
+
+
+                
+            
+
+            
+        </div>
+    </div>
+
+
+     <!-- REGISTER  SECTION AND LOGIN SECTION STARTS -->
+     <div class="width-100 register-sect">
+        <div class="container">
+            <div class="width-50">
+                <div class="register-panel">
+                    <img src="./static/images/feature-1.png" class="register-img">
+                    <h4 class="register-title"> DO YOU WANT TO FIND A JOB?</h4>
+                    <p class="register-desc">  Your Dream Job is Just One Click Away!</p>
+                    <button class="register-btn" onclick="window.location.href='{{ url_for('register') }}';">REGISTER HERE</button>
+
+                </div>
+            </div>
+                <div class="width-50">
+                    <div class="register-panel">
+                        <img src="./static/images/image10.png" class="register-img">
+                        <h4 class="register-title"> ALREADY REGISTERD LOGIN HERE</h4>
+                        <p class="register-desc"> Log in now and apply for the best jobs effortlessly!</p>
+                        <button class="register-btn" onclick="window.location.href='{{ url_for('login') }}';">LOGIN</button>
+
+
+
+
+                    </div>
+                </div>
+        </div>
+     </div>
+
+
+
+    
+
+    
+    
+
+     <!--TOP COMPANY ENDS -->
+     <!-- FOOTER SECTION START -->
+      <div class="width-100 footer-background">
+        <div class="container">
+            <div class="width-25">
+                <h4>QUICK LINKS</h4>
+                <ul class="footer-list">
+                <li>Python Jobs in Banglore</li>
+                <li>Java Jobs in chennai</i>
+                <li>HTML Jobs in Mumbai</li>
+                <li>AIML Jobs in USA</li>
+                </ul>
+            </div>
+
+
+            <div class="width-25">
+                <h4>JOB CATEGORIES</h4>
+                <ul class="footer-list">
+                    <li>Links to IT Jobs</li>
+                    <li>Marketing Jobs</li>
+                     <li>Finance Jobs</li>
+                     <li>Recuriter Jobs</li>
+
+                
+                </ul>
+            </div>
+
+            <div class="width-25">
+                <h4>RESOURCES</h4>
+                <ul class="footer-list">
+                    <li>Home</li>
+                     <li>Post Free Job</li>
+                     <li>Recruiter Login</li>
+                     <li>Contact Us</li>
+                </ul>
+            </div>
+
+            <div class="width-25">
+                <h4>GET IN TOUCH</h4>
+                <ul class="get-in-touch">
+                     <li><i class="fa fa-envelope-o"></i><p>E-MAIL: sagarbasu21@gmail.com</p></li>
+                     <li><i class="fa fa-headphones"></i><p>WHATS-APP: +636 040 995</p></li>
+                     <li><i class="fa fa-fax"></i><p>CONTACT NO:+636 040 995</p></li>
+                     <li><i class="fa fa-globe"></i><p>WEBSITE:www.sagarbasu.com</p></li>
+                     <li><img src="./static/images/icon-facebook.png"></li>
+                    <li><img src="./static/images/icon-instagram.png"></li>
+                     <li><img src="./static/images/icon-linkedin.png"></li>
+                     <li><img src="./static/images/icon-twitter.png"></li>
+                </ul>
+            </div>
+
+
+
+        </div>
+      </div>
+
+
+
+     <!-- FOOTER SECTION ENDS -->
+     <!-- LOGIN PAGE DIRECTION STARTS -->
+     
+
+
+
+
+
+
+
+
+
+
+
+      <!-- LOGIN PAGE DIRECTION ENDS -->
+
+
+      
+   
+        
+
+
+
+
+    
+
+
+
+</body>
+</html>
