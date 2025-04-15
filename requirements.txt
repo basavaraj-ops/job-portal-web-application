@@ -8,6 +8,4 @@ flask-bootstrap==3.3.7.1
 python-dotenv==0.21.0
 
 
-To install these dependencies, you can run:
-pip install -r requirements.txt
-
+ 
