@@ -12,7 +12,6 @@ A dynamic Job Portal Web Application built with Flask and SQLite that connects j
 
 ## 📁 Project Structure
 
-```
 FRONTEND/
 │
 ├── backend/
@@ -84,10 +83,7 @@ FRONTEND/
    python app.py
    ```
 
-5. **Access it in your browser**
-   ```
-   http://127.0.0.1:5000/
-   ```
+
 
 ## 📝 Future Improvements
 
