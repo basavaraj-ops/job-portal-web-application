@@ -3,7 +3,7 @@
 
 A dynamic Job Portal Web Application built with Flask and SQLite that connects job seekers with employers.
 1. Users can register
-2. log in and Register
+2.  Recuriter login and Register
 3. search based on Filters and apply for jobs
 4. while Recuriter can post jobs
 5. The admin panel(Dashboard) manages both users and job posts and also edit and Delete the users and jobs
